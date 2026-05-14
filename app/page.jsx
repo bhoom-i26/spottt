@@ -41,8 +41,9 @@ export default function LandingPage() {
           {/* Right - 3D Phone Mockup */}
           <div className="relative block">
             <Image
-              // src="/hero-main.png"
+              // src="/hero-main.pn Updated upstream
               src="/hero.png"
+
               alt="hero image"
               width={700}
               height={700}
