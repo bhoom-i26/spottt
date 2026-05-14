@@ -1,6 +1,10 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import Header from "@/components/header";
+import { ConvexClientProvider } from "./ConvexClientProvider";
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
+import { Toaster } from "@/components/ui/sonner";
 
 
 export const metadata = {
@@ -18,7 +22,13 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
-
+            <ClerkProvider
+            appearance={{
+            theme: dark,
+            }}>
+            <ConvexClientProvider>
+               
+            
          
         {/* header */}
         <Header />
@@ -36,7 +46,10 @@ export default function RootLayout({ children }) {
           <footer className="border-t border-gray-800/50 py-8 px-6 max-w-7xl mx-auto">
           <div className="text-sm text-gray-400"> made with love by roadsideCoder</div>
           </footer>
+          <Toaster position="top-center" richColors/>
         </main>
+        </ConvexClientProvider>
+        </ClerkProvider>
          </ThemeProvider>
         </body>
     </html>
