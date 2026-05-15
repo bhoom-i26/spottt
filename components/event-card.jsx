@@ -30,6 +30,7 @@ const EventCard = ({
                 src={event.coverImage}
                 alt={event.title}
                 fill
+                sizes="100vw"
                 className="object-cover"
               />
             ) : (
